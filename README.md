@@ -1,48 +1,90 @@
-# Python Voice Assistant 🎤
+# Advanced Python Voice Assistant 🎙️
 
 ## Overview
 
-This project is a simple voice assistant built in Python that can recognize speech commands and perform useful tasks such as fetching information, opening websites, and speaking responses.
+This project is an advanced modular voice assistant built in Python that demonstrates speech recognition, task automation, and extensible command handling.
+It is designed as a resume-level project showcasing architecture design, API usage, and user interaction through voice commands.
 
-It demonstrates concepts like:
+The assistant listens to spoken commands, interprets intent, and performs actions such as:
 
-* Speech Recognition
-* Text-to-Speech
-* API Integration
-* Task Automation
-* Error Handling
+* Providing weather updates
+* Answering general knowledge questions
+* Opening web pages
+* Simulating smart home device control
+* Executing customizable user-defined commands
 
 ---
 
 ## Features
 
-* 🎙 Voice command recognition
-* 🔊 Spoken responses
-* 🌐 Open Google
-* ⏰ Tell current time
-* 📚 Wikipedia search
-* 🌦 Weather updates
+### Speech Recognition
+
+* Uses microphone input to capture voice commands
+* Converts speech to text using Google Speech Recognition API
+
+### Natural Language Routing
+
+* Lightweight intent detection system
+* Routes commands to appropriate modules
+
+### Modular Architecture
+
+Clean separation of functionality:
+
+* `speech.py` → Input/Output handling
+* `weather.py` → Weather API interaction
+* `knowledge.py` → Wikipedia query engine
+* `smarthome.py` → Smart device simulation
+
+### Custom Commands
+
+Users can define their own assistant responses via:
+
+```
+data/custom_commands.json
+```
+
+### API Integration
+
+* Weather data from wttr.in
+* Knowledge responses from Wikipedia
+
+### Error Handling
+
+* Handles speech recognition failures
+* Safe fallback responses for unknown queries
 
 ---
 
-## Technologies Used
+## Project Structure
 
-* Python 3.11
-* SpeechRecognition
-* PyAudio
-* pyttsx3
-* Wikipedia API
-* Requests
+```
+voice-assistant/
+│
+├── assistant.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── modules/
+│   ├── speech.py
+│   ├── weather.py
+│   ├── knowledge.py
+│   ├── smarthome.py
+│
+└── data/
+    └── custom_commands.json
+```
 
 ---
 
-## Setup Instructions
+## Installation
 
 ### 1️⃣ Clone Repository
 
 ```
 git clone https://github.com/sripriyamishra13-sketch/voice-assistant-python.git
-cd voice-assistant-python
+cd voice-assistant
 ```
 
 ### 2️⃣ Create Virtual Environment
@@ -58,25 +100,48 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run Assistant
+### 4️⃣ Install PyAudio (Windows)
+
+```
+pip install pipwin
+pipwin install pyaudio
+```
+
+---
+
+## Running the Assistant
 
 ```
 python assistant.py
 ```
 
+Speak commands such as:
+
+* "time"
+* "open google"
+* "weather"
+* "turn on light"
+* "who is Elon Musk"
+* "exit"
+
 ---
 
-## Future Improvements
+## Future Enhancements
 
-* Email sending
+* Email sending automation
 * Reminder scheduling
-* NLP understanding
-* GUI Interface
-* Smart home integrations
+* Advanced NLP with spaCy
+* ChatGPT integration
+* GUI interface
+* Real IoT device control
 
 ---
 
 ## Author
+ **Sripriya Mishra**
 
-**Sripriya Mishra**
+Built as part of a Python Internship Project demonstrating applied AI and automation skills.
+
+
+
 
